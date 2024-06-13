@@ -18,21 +18,6 @@ export default class Rectangle extends Base {
   getType(): 'polygon' | 'line' {
     return 'polygon';
   }
-
-  getPointsCenter(){
-    // 计算中心点,重心
-    const midXYZ = new this.cesium.Cartesian3();
-    this.points.map((pt)=>{
-     midXYZ.x = midXYZ.x+ pt.x;
-     midXYZ.y = midXYZ.y+ pt.y;
-     midXYZ.z = midXYZ.z+ pt.z;
-    })
-    midXYZ.x = midXYZ.x/this.points.length;
-    midXYZ.y = midXYZ.y/this.points.length;
-    midXYZ.z = midXYZ.z/this.points.length;
-    return midXYZ;
- }
-
   /**
    * Add points only on click events
    */

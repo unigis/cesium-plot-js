@@ -490,6 +490,20 @@ export default class Base {
     }
   }
 
+  getPointsCenter(){
+    // 计算中心点,重心
+    const center = new this.cesium.Cartesian3();
+    this.points.map((pt)=>{
+      center.x = center.x+ pt.x;
+      center.y = center.y+ pt.y;
+      center.z = center.z+ pt.z;
+    })
+    center.x = center.x/this.points.length;
+    center.y = center.y/this.points.length;
+    center.z = center.z/this.points.length;
+    return center;
+ }
+
   showWithAnimation(duration: number = 2000, delay: number = 0, callback?: () => void) {
     if (this.state !== 'hidden') {
       //If not in a static state or already displayed, do not process.

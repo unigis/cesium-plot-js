@@ -55,16 +55,6 @@ export default class Triangle extends Base {
     this.drawPolygon();
   }
 
-
-  getPointsCenter() {
-    // 计算中心点,重心
-    const midXYZ = new this.cesium.Cartesian3();
-    midXYZ.x = (this.points[0].x + this.points[1].x + this.points[2].x) / 3;
-    midXYZ.y = (this.points[0].y + this.points[1].y + this.points[2].y) / 3;
-    midXYZ.z = (this.points[0].z + this.points[1].z + this.points[2].z) / 3;
-    return midXYZ;
-  }
-
   createGraphic(positions: Cartesian3[]) {
     if (this.growUp) {
       const [p1, p2, p3] = positions.map(this.cartesianToLnglat);

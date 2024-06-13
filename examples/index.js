@@ -22,6 +22,7 @@ window.onload = () => {
   });
 
   viewer.scene.postProcessStages.fxaa.enabled = true;
+  window.viewer = viewer;
   viewer.scene.camera.setView({
     destination: Cesium.Cartesian3.fromDegrees(117.000, 36.6666666, 15000),
   });
@@ -191,9 +192,7 @@ window.onload = () => {
         }
         break;
       case 'clear':
-        if (geometry) {
-          geometry.remove();
-        }
+          viewer.entities.removeAll();
           break;
       default:
         break;

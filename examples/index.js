@@ -112,7 +112,7 @@ window.onload = () => {
         break;
       case 'drawStraightArrow':
         geometry = new CesiumPlot.StraightArrow(Cesium, viewer, {
-          // material: Cesium.Color.RED,
+          material: Cesium.Color.RED,
         });
         break;
       case 'drawAssaultDirection':
@@ -125,7 +125,7 @@ window.onload = () => {
         break;
       case 'drawDoubleArrow':
         geometry = new CesiumPlot.DoubleArrow(Cesium, viewer, {
-          // outlineMaterial: Cesium.Color.GREEN,
+          outlineMaterial: Cesium.Color.GREEN,
         });
         break;
       case 'drawFreehandLine':

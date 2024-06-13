@@ -490,6 +490,17 @@ export default class Base {
     }
   }
 
+  flash(opts: VisibleAnimationOpts){
+    if (opts) {
+      const { duration, delay, callback } = opts;
+      this.hideWithAnimation(duration,0, callback);
+      this.showWithAnimation(duration, duration, callback);
+      return;
+    } else {
+      this.hideWithAnimation(0, 0);
+    }
+  }
+
   getPointsCenter(){
     // 计算中心点,重心
     const center = new this.cesium.Cartesian3();

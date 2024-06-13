@@ -24,7 +24,7 @@ window.onload = () => {
   viewer.scene.postProcessStages.fxaa.enabled = true;
   window.viewer = viewer;
   viewer.scene.camera.setView({
-    destination: Cesium.Cartesian3.fromDegrees(117.000, 36.6666666, 15000),
+    destination: Cesium.Cartesian3.fromDegrees(117.00000, 36.6666666, 15000),
   });
   //   let scene = viewer.scene;
   //   viewer.scene.debugShowFramesPerSecond = true;
@@ -194,6 +194,13 @@ window.onload = () => {
       case 'clear':
           viewer.entities.removeAll();
           break;
+      case 'flashing':
+        if (geometry) {
+          geometry.flash({
+            duration: 500,
+          });
+        }
+        break;
       default:
         break;
     }
